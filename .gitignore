@@ -1,9 +1,7 @@
 # Prerequisites
 *.d
 
-# Compiled Object files
-*.slo
-*.lo
+# Compiled object files
 *.o
 *.obj
 
@@ -16,17 +14,81 @@
 *.dylib
 *.dll
 
-# Fortran module files
-*.mod
-*.smod
-
 # Compiled Static libraries
-*.lai
-*.la
-*.a
 *.lib
+*.a
 
 # Executables
 *.exe
 *.out
 *.app
+
+# Debug files
+*.dSYM/
+*.d/
+*.ddp
+*.dwo
+
+# Generated files
+*.ii
+*.s
+*.su
+*.mod
+*.o.d
+*.Tpo
+*.Tpo
+*.Po
+
+# Backup files
+*~
+*.swp
+*.swo
+
+# Package files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Editor and IDE files
+# CLion
+.idea/
+*.iml
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Eclipse
+.project
+.cproject
+.settings/
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+
+# Qt
+*.pro.user
+*.qbs.user
+*.moc
+
+# Other
+*Makefile*
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+Testing/
+cmake_install.cmake
+CTestTestfile.cmake
+CMakeLists.txt.user
+
+# Custom excludes
+# Add your own files and directories below this line
+# For example:
+# /my_custom_directory/
