@@ -92,3 +92,13 @@ CMakeLists.txt.user
 # Add your own files and directories below this line
 # For example:
 # /my_custom_directory/
+
+# Ignore .cache files
+.cache
+
+# Ignore the Build Directory
+/build/
+
+# Ignore the clang format file
+.clang-format
+compile_commands.json
