@@ -98,3 +98,6 @@ CMakeLists.txt.user
 
 # Ignore the Build Directory
 /build/
+
+# Ignore the clang format file
+.clang-format
