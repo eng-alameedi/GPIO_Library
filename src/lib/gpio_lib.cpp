@@ -21,3 +21,10 @@ Gpio::~Gpio()
       std::cout << "A normal class was deleted" << std::endl;
     }
 }
+
+int Gpio::get_pin()const {return *pin_number;}
+Gpio::State Gpio::get_state()const { return direction;}
+bool Gpio::get_ownership()const {return owner;}
+
+void Gpio::set_state(State st) {direction = st;}
+void Gpio::set_pin(int pin) {*pin_number = pin;}

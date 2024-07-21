@@ -14,6 +14,7 @@ class Gpio
   bool get_ownership()const;
 
   void set_state(State);
+  void set_pin(int);
   void error_handle(const char*);
   void read_date();
   void write_date();
