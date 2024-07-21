@@ -16,8 +16,6 @@ class Gpio
   void set_state(State);
   void set_pin(int);
   void error_handle(const char*);
-  void read_date();
-  void write_date();
 
   private:
   int* pin_number{0};             // GPIO pin number to use.
