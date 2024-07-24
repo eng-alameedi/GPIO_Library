@@ -4,6 +4,7 @@
 class Gpio
 {
   public:
+  Gpio(int);
   Gpio(int&);
   Gpio(int*);
   ~Gpio();
@@ -13,12 +14,12 @@ class Gpio
   int get_pin()const;
   bool get_ownership()const;
 
-  void read_date();
+  void read_data();
   void write_data();
   void error_handle(const char*);
 
   private:
-  int* pin_number{0};             // GPIO pin number to use.
+  int* pin_number{};             // GPIO pin number to use.
   State direction {State::READ};
   bool owner{false};
   static int error_no;

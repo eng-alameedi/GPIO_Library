@@ -21,9 +21,17 @@ Gpio::~Gpio()
     }
 }
 
+
 int Gpio::get_pin()const {return *pin_number;}
 Gpio::State Gpio::get_state()const { return direction;}
 bool Gpio::get_ownership()const {return owner;}
 
 void Gpio::set_state(State st) {direction = st;}
-void Gpio::set_pin(int pin) {*pin_number = pin;}
+
+void Gpio::read_data()
+{
+  if(open_pin())
+    // do open the /sys/class/gpio/export with pin
+  else
+    // return an error message
+}
