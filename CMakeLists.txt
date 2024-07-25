@@ -6,7 +6,7 @@ project(GPIO_LIBRARY
        )
 
 set(file_name GpioLib)
-set(file_path src/lib/gpio_lib.cpp src/main.cpp)
+set(file_path src/lib/gpio_lib.cpp src/lib/init_gpio.cpp src/main.cpp)
 
 include_directories(src/include)
 
