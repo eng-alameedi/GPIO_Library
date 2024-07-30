@@ -9,6 +9,7 @@ set(file_name GpioLib)
 set(file_path src/lib/gpio_lib.cpp src/lib/init_gpio.cpp src/main.cpp)
 
 include_directories(src/include)
+include_directories(/home/alameedi/Github/iLog/build)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -19,3 +20,5 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 add_executable(${file_name} ${file_path})
+
+target_link_libraries(${file_name} /home/alameedi/Github/iLog/build/liblog.a)
