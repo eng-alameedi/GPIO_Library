@@ -27,6 +27,6 @@
  * @return: this function return (true) if mapping success, and false if not
  *
  */
-bool gpio_setupt();
+bool gpio_setup();
 
 #endif    // _GPIO_H_
