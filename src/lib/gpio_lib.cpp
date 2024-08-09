@@ -5,8 +5,20 @@
 
 using Gpio::State::READ;
 
-Gpio::Gpio(int& pin): pin_number(&pin), direction(READ), owner(false) {/* check for pin state (if it's read only)*/}
-Gpio::Gpio(int* pin): pin_number(new int {*pin}), direction(READ), owner(true) {/*Check for pin state and pin!=nullptr */}
+Gpio::Gpio(int& pin): pin_number(&pin), direction(READ), owner(false)
+{
+  if(gpio_setup())
+    std::cout << "GPIO Setup Done...!" << std::endl;
+  else
+    std::cout << "GPIO Setup Not Work...!" << std::endl;
+}
+Gpio::Gpio(int* pin): pin_number(new int {*pin}), direction(READ), owner(true)
+{
+  if(gpio_setup())
+    std::cout << "GPIO Setup Done...!" << std::endl;
+  else
+    std::cout << "GPIO Setup Not Work...!" << std::endl;
+}
 
 Gpio::~Gpio()
 {
