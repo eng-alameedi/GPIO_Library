@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/alameedi/Github/GPIO_Library/build",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/iLog/build -g -std=gnu++23 -o CMakeFiles/GpioLib.dir/src/lib/gpio_lib.cpp.o -c /home/alameedi/Github/GPIO_Library/src/lib/gpio_lib.cpp",
+  "file": "/home/alameedi/Github/GPIO_Library/src/lib/gpio_lib.cpp",
+  "output": "CMakeFiles/GpioLib.dir/src/lib/gpio_lib.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/GPIO_Library/build",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/iLog/build -g -std=gnu++23 -o CMakeFiles/GpioLib.dir/src/lib/init_gpio.cpp.o -c /home/alameedi/Github/GPIO_Library/src/lib/init_gpio.cpp",
+  "file": "/home/alameedi/Github/GPIO_Library/src/lib/init_gpio.cpp",
+  "output": "CMakeFiles/GpioLib.dir/src/lib/init_gpio.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/GPIO_Library/build",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/iLog/build -g -std=gnu++23 -o CMakeFiles/GpioLib.dir/src/main.cpp.o -c /home/alameedi/Github/GPIO_Library/src/main.cpp",
+  "file": "/home/alameedi/Github/GPIO_Library/src/main.cpp",
+  "output": "CMakeFiles/GpioLib.dir/src/main.cpp.o"
+}
+]
