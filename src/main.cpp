@@ -6,11 +6,9 @@ extern "C" {
 #include <iostream>
 
 int main() {
-  const char* msg{"Welcome in our GPIO LIBRARY"};
-  std::cout << msg << std::endl;
-  std::cout << "-----------------------------------" << std::endl;
-
+  const char* msg{"Welcome in our GPIO LIBRARY\n"};
+  LOG(INFO,msg);
+  std::cout << "---------------------------------------------" << std::endl;
   init_pin(10, 'w');
-  LOG(INFO,"This is a test\n");
   return 0;
 }

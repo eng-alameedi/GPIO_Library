@@ -41,11 +41,12 @@ bool Gpio::get_ownership()const {return owner;}
 
 void Gpio::set_state(State st) {direction = st;}
 
-/*void Gpio::read_data()
+void Gpio::read_data()
 {
-  if(open_pin())
-    // do open the /sys/class/gpio/export with pin
-  else
-    // return an error message
+  set_state(State::READ);
 }
-*/
+
+void Gpio::write_data()
+{
+  set_state(State::WRITE);
+}
