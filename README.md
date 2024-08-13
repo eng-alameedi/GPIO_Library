@@ -38,3 +38,5 @@ so the pin (17) will be ready to use, and new directory will be created
 ```
 
 the **direction*** used for set the pin state (out,in) which mean (write,read), while the **value** used for set (0,1) for output or input.
+
+other method is to mapping a memory of the first pin, by mapping the /dev/mem file with entry location.
