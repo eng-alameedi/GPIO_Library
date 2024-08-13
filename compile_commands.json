@@ -1,20 +1,62 @@
 [
 {
   "directory": "/home/alameedi/Github/GPIO_Library/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/iLog/build -g -std=gnu++23 -o CMakeFiles/GpioLib.dir/src/lib/gpio_lib.cpp.o -c /home/alameedi/Github/GPIO_Library/src/lib/gpio_lib.cpp",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/GPIO_Library/iLog/build -g -std=gnu++20 -o CMakeFiles/GpioLib.dir/src/lib/gpio.cpp.o -c /home/alameedi/Github/GPIO_Library/src/lib/gpio.cpp",
+  "file": "/home/alameedi/Github/GPIO_Library/src/lib/gpio.cpp",
+  "output": "CMakeFiles/GpioLib.dir/src/lib/gpio.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/GPIO_Library/build",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/GPIO_Library/iLog/build -g -std=gnu++20 -o CMakeFiles/GpioLib.dir/src/lib/gpio_lib.cpp.o -c /home/alameedi/Github/GPIO_Library/src/lib/gpio_lib.cpp",
   "file": "/home/alameedi/Github/GPIO_Library/src/lib/gpio_lib.cpp",
   "output": "CMakeFiles/GpioLib.dir/src/lib/gpio_lib.cpp.o"
 },
 {
   "directory": "/home/alameedi/Github/GPIO_Library/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/iLog/build -g -std=gnu++23 -o CMakeFiles/GpioLib.dir/src/lib/init_gpio.cpp.o -c /home/alameedi/Github/GPIO_Library/src/lib/init_gpio.cpp",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/GPIO_Library/iLog/build -g -std=gnu++20 -o CMakeFiles/GpioLib.dir/src/lib/init_gpio.cpp.o -c /home/alameedi/Github/GPIO_Library/src/lib/init_gpio.cpp",
   "file": "/home/alameedi/Github/GPIO_Library/src/lib/init_gpio.cpp",
   "output": "CMakeFiles/GpioLib.dir/src/lib/init_gpio.cpp.o"
 },
 {
   "directory": "/home/alameedi/Github/GPIO_Library/build",
-  "command": "/usr/bin/c++  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/iLog/build -g -std=gnu++23 -o CMakeFiles/GpioLib.dir/src/main.cpp.o -c /home/alameedi/Github/GPIO_Library/src/main.cpp",
+  "command": "/usr/bin/c++  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/GPIO_Library/iLog/build -g -std=gnu++20 -o CMakeFiles/GpioLib.dir/src/main.cpp.o -c /home/alameedi/Github/GPIO_Library/src/main.cpp",
   "file": "/home/alameedi/Github/GPIO_Library/src/main.cpp",
   "output": "CMakeFiles/GpioLib.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/GPIO_Library/build/_deps/ilog-build",
+  "command": "/usr/bin/cc  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/GPIO_Library/iLog/build -I/home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/include -g -std=gnu11 -o CMakeFiles/iLog.dir/src/lib/iLog.c.o -c /home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/lib/iLog.c",
+  "file": "/home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/lib/iLog.c",
+  "output": "_deps/ilog-build/CMakeFiles/iLog.dir/src/lib/iLog.c.o"
+},
+{
+  "directory": "/home/alameedi/Github/GPIO_Library/build/_deps/ilog-build",
+  "command": "/usr/bin/cc  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/GPIO_Library/iLog/build -I/home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/include -g -std=gnu11 -o CMakeFiles/iLog.dir/src/lib/file_log.c.o -c /home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/lib/file_log.c",
+  "file": "/home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/lib/file_log.c",
+  "output": "_deps/ilog-build/CMakeFiles/iLog.dir/src/lib/file_log.c.o"
+},
+{
+  "directory": "/home/alameedi/Github/GPIO_Library/build/_deps/ilog-build",
+  "command": "/usr/bin/cc  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/GPIO_Library/iLog/build -I/home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/include -g -std=gnu11 -o CMakeFiles/Log.dir/src/lib/iLog.c.o -c /home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/lib/iLog.c",
+  "file": "/home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/lib/iLog.c",
+  "output": "_deps/ilog-build/CMakeFiles/Log.dir/src/lib/iLog.c.o"
+},
+{
+  "directory": "/home/alameedi/Github/GPIO_Library/build/_deps/ilog-build",
+  "command": "/usr/bin/cc  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/GPIO_Library/iLog/build -I/home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/include -g -std=gnu11 -o CMakeFiles/Log.dir/src/lib/file_log.c.o -c /home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/lib/file_log.c",
+  "file": "/home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/lib/file_log.c",
+  "output": "_deps/ilog-build/CMakeFiles/Log.dir/src/lib/file_log.c.o"
+},
+{
+  "directory": "/home/alameedi/Github/GPIO_Library/build/_deps/ilog-build",
+  "command": "/usr/bin/cc  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/GPIO_Library/iLog/build -I/home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/include -g -std=gnu11 -o CMakeFiles/Log.dir/src/lib/log_time.c.o -c /home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/lib/log_time.c",
+  "file": "/home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/lib/log_time.c",
+  "output": "_deps/ilog-build/CMakeFiles/Log.dir/src/lib/log_time.c.o"
+},
+{
+  "directory": "/home/alameedi/Github/GPIO_Library/build/_deps/ilog-build",
+  "command": "/usr/bin/cc  -I/home/alameedi/Github/GPIO_Library/src/include -I/home/alameedi/Github/GPIO_Library/iLog/build -I/home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/include -g -std=gnu11 -o CMakeFiles/Log.dir/src/main.c.o -c /home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/main.c",
+  "file": "/home/alameedi/Github/GPIO_Library/build/_deps/ilog-src/src/main.c",
+  "output": "_deps/ilog-build/CMakeFiles/Log.dir/src/main.c.o"
 }
 ]
