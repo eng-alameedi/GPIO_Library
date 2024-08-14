@@ -3,7 +3,7 @@
 
 void init_pin(int pin, char mode)
 {
-  int* pin_num;
+  /*int* pin_num;
   pin_num = & pin;
   if(mode == 'r')
     {
@@ -19,4 +19,5 @@ void init_pin(int pin, char mode)
     {
       // code here
     }
+  */
 }
