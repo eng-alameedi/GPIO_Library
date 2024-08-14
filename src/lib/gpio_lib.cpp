@@ -4,7 +4,7 @@
 #include <iostream>
 
 using Gpio::State::READ;
-
+/*
 Gpio::Gpio(int& pin): pin_number(&pin), direction(READ), owner(false)
 {
   if(gpio_setup())
@@ -13,6 +13,14 @@ Gpio::Gpio(int& pin): pin_number(&pin), direction(READ), owner(false)
     std::cout << "GPIO Setup Not Work...!" << std::endl;
 }
 Gpio::Gpio(int* pin): pin_number(new int {*pin}), direction(READ), owner(true)
+{
+  if(gpio_setup())
+    std::cout << "GPIO Setup Done...!" << std::endl;
+  else
+    std::cout << "GPIO Setup Not Work...!" << std::endl;
+}
+*/
+Gpio::Gpio(int pin): pin_number(new int(pin)), direction(READ), owner(true)
 {
   if(gpio_setup())
     std::cout << "GPIO Setup Done...!" << std::endl;
