@@ -10,7 +10,8 @@
 #include "gpio.h"
 
 extern "C" {
-#include "/home/alameedi/Github/iLog/src/include/iLog.h"
+  //#include "/home/alameedi/Github/iLog/src/include/iLog.h"
+  #include "iLog.h"
 }
 
 #include <cstddef>
