@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-using Gpio::State::READ;
+// using Gpio::State::READ;
 /*
 Gpio::Gpio(int& pin): pin_number(&pin), direction(READ), owner(false)
 {
@@ -20,7 +20,7 @@ Gpio::Gpio(int* pin): pin_number(new int {*pin}), direction(READ), owner(true)
     std::cout << "GPIO Setup Not Work...!" << std::endl;
 }
 */
-Gpio::Gpio(int pin): pin_number(new int(pin)), direction(READ), owner(true)
+Gpio::Gpio(int pin): pin_number(new int(pin)), direction(Gpio::State::READ), owner(true)
 {
   if(gpio_setup())
     std::cout << "GPIO Setup Done...!" << std::endl;

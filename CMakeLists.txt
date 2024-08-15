@@ -9,7 +9,8 @@ set(file_name GpioLib)
 set(file_path src/lib/gpio.cpp src/lib/gpio_lib.cpp src/lib/init_gpio.cpp src/main.cpp)
 
 include_directories(src/include)
-include_directories(iLog/build)
+# include_directories(iLog/build)
+include_directories(${ilog_SOURCE_DIR}/src/include)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -30,3 +31,4 @@ endif()
 add_executable(${file_name} ${file_path})
 
 target_link_libraries(${file_name} PRIVATE iLog)
+target_include_directories(${file_name} PRIVATE ${ilog_SOURCE_DIR}/src/include)

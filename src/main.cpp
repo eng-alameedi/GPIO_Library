@@ -2,7 +2,8 @@
 #include "gpio_lib.h"
 
 extern "C" {
-  #include "/home/alameedi/Github/iLog/src/include/iLog.h"
+  //#include "/home/alameedi/Github/iLog/src/include/iLog.h"
+  #include "iLog.h"
 }
 
 #include <iostream>
