@@ -14,8 +14,6 @@ class Gpio
 {
   public:
   Gpio(int);
-  Gpio(int&);
-  Gpio(int*);
   ~Gpio();
   enum class State: char {READ, WRITE};
 
