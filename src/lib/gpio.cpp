@@ -8,10 +8,8 @@
 //
 
 #include "gpio.h"
+#include "iLog.h"
 
-extern "C" {
-  #include "iLog.h"
-}
 
 #include <cstddef>
 #include <fcntl.h>
