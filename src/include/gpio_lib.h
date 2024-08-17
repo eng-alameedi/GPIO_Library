@@ -15,7 +15,8 @@ class Gpio
   public:
   Gpio(int);
   ~Gpio();
-  enum class State: char {READ, WRITE};
+  enum class State : char {READ, WRITE};              // enumeration for the GPIO pin state (out,in)
+  enum class Direction: char {HIGH, LOW};            // enumeration for the GPIO pin voltage (HIGH:1, LOW:0)
 
   State get_state()const;
   int get_pin()const;
@@ -26,7 +27,7 @@ class Gpio
   void error_handle(const char*);
 
   private:
-  int* pin_number{};             // GPIO pin number to use.
+  int* pin_number{};                                // GPIO pin number to use of type (pointer ---> int).
   State direction {State::READ};
   bool owner{false};
   static int error_no;
