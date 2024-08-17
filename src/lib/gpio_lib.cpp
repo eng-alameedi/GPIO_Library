@@ -1,31 +1,16 @@
 #include "gpio_lib.h"
 #include "gpio.h"
 
-#include <iostream>
+extern "C" {
+  #include "iLog.h"
+}
 
-// using Gpio::State::READ;
-/*
-Gpio::Gpio(int& pin): pin_number(&pin), direction(READ), owner(false)
-{
-  if(gpio_setup())
-    std::cout << "GPIO Setup Done...!" << std::endl;
-  else
-    std::cout << "GPIO Setup Not Work...!" << std::endl;
-}
-Gpio::Gpio(int* pin): pin_number(new int {*pin}), direction(READ), owner(true)
-{
-  if(gpio_setup())
-    std::cout << "GPIO Setup Done...!" << std::endl;
-  else
-    std::cout << "GPIO Setup Not Work...!" << std::endl;
-}
-*/
 Gpio::Gpio(int pin): pin_number(new int(pin)), direction(Gpio::State::READ), owner(true)
 {
   if(gpio_setup())
-    std::cout << "GPIO Setup Done...!" << std::endl;
+    LOG(INFO, "GPIO Setup Done...!\n");
   else
-    std::cout << "GPIO Setup Not Work...!" << std::endl;
+    LOG(INFO, "GPIO Setup Not Work...!\n");
 }
 
 Gpio::~Gpio()
@@ -34,11 +19,11 @@ Gpio::~Gpio()
     {
       delete pin_number;
       pin_number = nullptr;
-      std::cout << "A pointer class was deleted" << std::endl;
+      LOG(INFO, "A pointer class was deleted");
     }
   else
     {
-      std::cout << "A normal class was deleted" << std::endl;
+      LOG(INFO, "A normal class was deleted");
     }
 }
 

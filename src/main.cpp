@@ -2,7 +2,6 @@
 #include "gpio_lib.h"
 
 extern "C" {
-  //#include "/home/alameedi/Github/iLog/src/include/iLog.h"
   #include "iLog.h"
 }
 
@@ -15,6 +14,6 @@ int main() {
 
   pin_init(10);
 
-  std::cout << "The GPIO PIN #" << g10.get_pin() << std::endl;
+  std::cout << "The GPIO PIN #" << gpin10.get_pin() << std::endl;
   return 0;
 }
