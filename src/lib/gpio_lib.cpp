@@ -1,9 +1,6 @@
 #include "gpio_lib.h"
 #include "gpio.h"
-
-extern "C" {
-  #include "iLog.h"
-}
+#include "iLog.h"
 
 Gpio::Gpio(int pin): pin_number(new int(pin)), direction(Gpio::State::READ), owner(true)
 {

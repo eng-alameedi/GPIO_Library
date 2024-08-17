@@ -1,9 +1,12 @@
 #include "init_gpio.h"
 #include "gpio_lib.h"
 
-extern "C" {
+/*extern "C" {
   #include "iLog.h"
 }
+*/
+
+#include "iLog.h"
 
 #include <iostream>
 
