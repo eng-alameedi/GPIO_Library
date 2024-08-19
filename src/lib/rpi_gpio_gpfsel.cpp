@@ -36,11 +36,16 @@ void gpsel_gpio_pin(volatile unsigned int* gpio, int pin)
       volatile unsigned int* gp_fsel_pin = gpio + (gpfsel/sizeof(unsigned int));
       unsigned int value;
       value = *gp_fsel_pin;
-      value &= ~(7 << 6);
+      value &= ~(7 << pin*3);
       *gp_fsel_pin = value;
+      std::cout << "The GPFSEL is: " << std::hex << *gp_fsel_pin << std::endl;
       value = *gp_fsel_pin;
-      value |= (1 << 6);
+      value |= (1 << pin*3);
       *gp_fsel_pin = value;
       std::cout << " the GPFSEL is: " << std::hex << *gp_fsel_pin << std::endl;
+      value = *gp_fsel_pin;
+      value &= ~(7 << 6);
+      *gp_fsel_pin = value;
+      std::cout << "The GPFSEL is: " << std::hex << *gp_fsel_pin << std::endl;
     }
 }
