@@ -102,3 +102,6 @@ CMakeLists.txt.user
 # Ignore the clang format file
 .clang-format
 # compile_commands.json
+
+# Ignore the file main.cpp
+src/main.cpp
