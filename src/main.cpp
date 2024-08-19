@@ -6,6 +6,7 @@
 }
 */
 #include "rpi_gpio_mem.h"
+#include "rpi_gpio_gpfsel.h"
 #include "iLog.h"
 
 #include <iostream>
@@ -23,7 +24,8 @@ int main() {
 
   if(gpio_init != nullptr)
     {
-      std::cout << "The Var in Pointer: " << *gpio_init << std::endl;
+      std::cout << "The GPFSEL is Started " << std::endl;
+      gpsel_gpio_pin(gpio_init, 5);
       unmap_peri_mem(gpio_init);
     }
   return 0;
