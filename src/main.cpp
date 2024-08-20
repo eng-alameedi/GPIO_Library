@@ -25,7 +25,7 @@ int main() {
   if(gpio_init != nullptr)
     {
       std::cout << "The GPFSEL is Started " << std::endl;
-      gpsel_gpio_pin(gpio_init, 5);
+      gpsel_gpio_pin(gpio_init, 5, OUTPUT);
       unmap_peri_mem(gpio_init);
     }
   return 0;
