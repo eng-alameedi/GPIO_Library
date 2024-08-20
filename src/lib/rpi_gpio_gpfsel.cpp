@@ -9,43 +9,48 @@
 #include <iostream>
 #include <fcntl.h>
 
-void gpsel_gpio_pin(volatile unsigned int* gpio, int pin)
+bool offset_select(unsigned int& offset, int pin)
 {
-  bool active {false};
-
-  off_t gpfsel;
-  if(pin >1 && pin <10 )
-    gpfsel = GPFSEL0_OFFSET;
-  else if(pin > 9 && pin < 19)
-    gpfsel = GPFSEL1_OFFSET;
-  else if(pin > 18 && pin < 28)
-    gpfsel = GPFSEL2_OFFSET;
-  else if(pin > 27 && pin < 37)
-    gpfsel = GPFSEL3_OFFSET;
+  if (pin > 1 && pin < 10)
+    offset = GPFSEL0_OFFSET;
+  else if (pin > 9 && pin < 19)
+    offset = GPFSEL1_OFFSET;
+  else if (pin > 18 && pin < 28)
+    offset = GPFSEL2_OFFSET;
+  else if (pin > 27 && pin < 37)
+    offset = GPFSEL3_OFFSET;
   else if (pin > 36 && pin < 46)
-    gpfsel = GPFSEL4_OFFSET;
+    offset = GPFSEL4_OFFSET;
   else if (pin > 45 && pin < 55)
-    gpfsel = GPFSEL5_OFFSET;
+    offset = GPFSEL5_OFFSET;
   else
     {
-      LOG(WARNING, "Your PIN# out off range\n");
-      active = true;
+    LOG(WARNING, "Your PIN# out off range\n");
+    return false;
     }
-  if(!active)
+  return true;
+}
+
+void gpsel_gpio_pin(volatile unsigned int* gpio, int pin)
+{
+  unsigned int gpfsel {};
+   if(offset_select(gpfsel, pin))
     {
       volatile unsigned int* gp_fsel_pin = gpio + (gpfsel/sizeof(unsigned int));
       unsigned int value;
       value = *gp_fsel_pin;
-      value &= ~(7 << pin*3);
+      value &= ~(7 << (pin%10)*3);
       *gp_fsel_pin = value;
       std::cout << "The GPFSEL is: " << std::hex << *gp_fsel_pin << std::endl;
       value = *gp_fsel_pin;
-      value |= (1 << pin*3);
+      value |= (1 << (pin%10)*3);
       *gp_fsel_pin = value;
       std::cout << " the GPFSEL is: " << std::hex << *gp_fsel_pin << std::endl;
       value = *gp_fsel_pin;
-      value &= ~(7 << 6);
+      value &= ~(7 << (pin%10)*3);
       *gp_fsel_pin = value;
       std::cout << "The GPFSEL is: " << std::hex << *gp_fsel_pin << std::endl;
     }
+   else
+     LOG(ERROR, "Something went wrong\n");
 }
