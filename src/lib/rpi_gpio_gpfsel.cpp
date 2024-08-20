@@ -54,7 +54,7 @@ void reset_pin_mode(volatile unsigned int* gpio, int pin)
       swap = *gp_fsel_pin;
       swap &= ~(7 << (pin%10)*3);
       *gp_fsel_pin = swap;
-      assert(*gp_fsel_pin == 0);
+      assert(*gp_fsel_pin == 0x00);
     }
   else
     LOG(ERROR, "Can't Select the right offset\n");
@@ -70,7 +70,7 @@ void set_pin_mode(volatile unsigned int* gpio, int pin, pin_mode p_mode)
     swap = *gp_fsel_pin;
     swap |= (p_mode << (pin % 10) * 3);
     *gp_fsel_pin = swap;
-    assert(*gp_fsel_pin == 8000);
+    assert(*gp_fsel_pin == 0x8000);
     }
   else
     LOG(ERROR, "Can't Select the right offset\n");
