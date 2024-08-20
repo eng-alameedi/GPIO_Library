@@ -6,6 +6,7 @@
 #include "rpi_gpio_gpfsel.h"
 #include "iLog.h"
 
+#include <cassert>
 #include <iostream>
 #include <fcntl.h>
 
@@ -31,26 +32,46 @@ bool offset_select(unsigned int& offset, int pin)
   return true;
 }
 
-void gpsel_gpio_pin(volatile unsigned int* gpio, int pin)
+void gpsel_gpio_pin(volatile unsigned int* gpio, int pin, pin_mode p_mode)
 {
   unsigned int gpfsel {};
-   if(offset_select(gpfsel, pin))
+   if(pin >= 0 && pin <= 54)
     {
-      volatile unsigned int* gp_fsel_pin = gpio + (gpfsel/sizeof(unsigned int));
-      unsigned int value;
-      value = *gp_fsel_pin;
-      value &= ~(7 << (pin%10)*3);
-      *gp_fsel_pin = value;
-      std::cout << "The GPFSEL is: " << std::hex << *gp_fsel_pin << std::endl;
-      value = *gp_fsel_pin;
-      value |= (1 << (pin%10)*3);
-      *gp_fsel_pin = value;
-      std::cout << " the GPFSEL is: " << std::hex << *gp_fsel_pin << std::endl;
-      value = *gp_fsel_pin;
-      value &= ~(7 << (pin%10)*3);
-      *gp_fsel_pin = value;
-      std::cout << "The GPFSEL is: " << std::hex << *gp_fsel_pin << std::endl;
+      reset_pin_mode(gpio, pin);
+      set_pin_mode(gpio, pin, p_mode);
     }
    else
-     LOG(ERROR, "Something went wrong\n");
+     LOG(ERROR, "Pin number out of range (0-54)\n");
+}
+
+void reset_pin_mode(volatile unsigned int* gpio, int pin)
+{
+  unsigned int gpfsel_offset {};
+  if(offset_select(gpfsel_offset,pin))
+    {
+      volatile unsigned int* gp_fsel_pin = gpio + (gpfsel_offset/sizeof(unsigned int));
+      unsigned int swap {};
+      swap = *gp_fsel_pin;
+      swap &= ~(7 << (pin%10)*3);
+      *gp_fsel_pin = swap;
+      assert(*gp_fsel_pin == 0);
+    }
+  else
+    LOG(ERROR, "Can't Select the right offset\n");
+}
+
+void set_pin_mode(volatile unsigned int* gpio, int pin, pin_mode p_mode)
+{
+  unsigned int gpfsel_offset{};
+  if (offset_select(gpfsel_offset, pin))
+    {
+    volatile unsigned int *gp_fsel_pin = gpio + (gpfsel_offset / sizeof(unsigned int));
+    unsigned int swap{};
+    swap = *gp_fsel_pin;
+    swap |= (p_mode << (pin % 10) * 3);
+    *gp_fsel_pin = swap;
+    assert(*gp_fsel_pin == 8000);
+    }
+  else
+    LOG(ERROR, "Can't Select the right offset\n");
 }

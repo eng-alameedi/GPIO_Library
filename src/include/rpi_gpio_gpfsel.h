@@ -21,9 +21,10 @@
 #define GPFSEL4_OFFSET   (0x10)                    // GPIO function select 4 address offset
 #define GPFSEL5_OFFSET   (0x14)                    // GPIO function select 5 address offset
 
-#define OUTPUT           (1)                       // GPIO pin set direction for output voltage (3.3v)
-#define INPUT            (0)                       // GPIO pin set direction for input (read voltage)
+// #define OUTPUT           (1)                       // GPIO pin set direction for output voltage (3.3v)
+// #define INPUT            (0)                       // GPIO pin set direction for input (read voltage)
 
+enum pin_mode {INPUT=0, OUTPUT=1, ALTERNET=4};
 /**
  *
  * @brief: this function used to activate the pin for (input, output, or alternate)
@@ -35,7 +36,7 @@
  * @return: this function will return nothing (void).
  *
  **/
-void gpsel_gpio_pin(volatile unsigned int*, int);
+void gpsel_gpio_pin(volatile unsigned int*, int, pin_mode);
 
 /**
  *
@@ -48,6 +49,11 @@ void gpsel_gpio_pin(volatile unsigned int*, int);
  * @return: this function return a bool type true or false.
  *
  **/
+
 bool offset_select(unsigned int&, int);
+
+void reset_pin_mode(volatile unsigned int*, int);
+
+void set_pin_mode(volatile unsigned int*, int, pin_mode);
 
 #endif     // _RPI_GPIO_GPFSEL_H_
