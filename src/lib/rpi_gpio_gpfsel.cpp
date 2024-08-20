@@ -7,22 +7,21 @@
 #include "iLog.h"
 
 #include <cassert>
-#include <iostream>
 #include <fcntl.h>
 
 bool offset_select(unsigned int& offset, int pin)
 {
-  if (pin > 1 && pin < 10)
+  if (pin >= 0 && pin < 9)                       // FSEL0 (0 - 9)
     offset = GPFSEL0_OFFSET;
-  else if (pin > 9 && pin < 19)
+  else if (pin >= 10 && pin <= 19)               // FSEL1 (10 - 19)
     offset = GPFSEL1_OFFSET;
-  else if (pin > 18 && pin < 28)
+  else if (pin >= 20 && pin <= 29)               // FSEL2 (20 - 29)
     offset = GPFSEL2_OFFSET;
-  else if (pin > 27 && pin < 37)
+  else if (pin >= 30 && pin <= 39)               // FSEL3 (30 - 39)
     offset = GPFSEL3_OFFSET;
-  else if (pin > 36 && pin < 46)
+  else if (pin >= 40 && pin <= 49)               // FSEL4 (40 - 49)
     offset = GPFSEL4_OFFSET;
-  else if (pin > 45 && pin < 55)
+  else if (pin >= 50 && pin <= 53)               // FSEL5 (50 - 53)
     offset = GPFSEL5_OFFSET;
   else
     {
@@ -35,7 +34,7 @@ bool offset_select(unsigned int& offset, int pin)
 void gpsel_gpio_pin(volatile unsigned int* gpio, int pin, pin_mode p_mode)
 {
   unsigned int gpfsel {};
-   if(pin >= 0 && pin <= 54)
+   if(pin >= 0 && pin <= 53)
     {
       reset_pin_mode(gpio, pin);
       set_pin_mode(gpio, pin, p_mode);
@@ -54,7 +53,7 @@ void reset_pin_mode(volatile unsigned int* gpio, int pin)
       swap = *gp_fsel_pin;
       swap &= ~(7 << (pin%10)*3);
       *gp_fsel_pin = swap;
-      assert(*gp_fsel_pin == 0x00);
+      assert(*gp_fsel_pin == 0x00);                    // the test for reset function for any pin number (0x00)
     }
   else
     LOG(ERROR, "Can't Select the right offset\n");
@@ -70,7 +69,7 @@ void set_pin_mode(volatile unsigned int* gpio, int pin, pin_mode p_mode)
     swap = *gp_fsel_pin;
     swap |= (p_mode << (pin % 10) * 3);
     *gp_fsel_pin = swap;
-    assert(*gp_fsel_pin == 0x8000);
+    assert(*gp_fsel_pin == 0x8000);                   // the test for set function of pin number 5 (0x8000)
     }
   else
     LOG(ERROR, "Can't Select the right offset\n");
