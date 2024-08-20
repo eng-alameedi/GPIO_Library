@@ -37,4 +37,17 @@
  **/
 void gpsel_gpio_pin(volatile unsigned int*, int);
 
+/**
+ *
+ * @brief: this function is used to select the right offset depend on pin number.
+ *
+ * @param1: this function take (unsigned int&) take a offset address by reference.
+ *
+ * @param2: this function take pin number of type (int)
+ *
+ * @return: this function return a bool type true or false.
+ *
+ **/
+bool offset_select(unsigned int&, int);
+
 #endif     // _RPI_GPIO_GPFSEL_H_
