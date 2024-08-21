@@ -104,4 +104,4 @@ CMakeLists.txt.user
 # compile_commands.json
 
 # Ignore the file main.cpp
-src/main.cpp
+main.cpp
