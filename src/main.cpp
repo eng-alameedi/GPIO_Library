@@ -26,13 +26,14 @@ int main() {
   if(gpio_init != nullptr)
     {
       std::cout << "The GPFSEL is Started " << std::endl;
-      gpsel_gpio_pin(gpio_init, 5, OUTPUT);
-      if(pin_set_state(gpio_init, 5, HIGH))
+      gpsel_gpio_pin(gpio_init, 5, INPUT);
+      if(pin_set_state(gpio_init, 5, LOW))
         LOG(INFO, "PIN NUMBER #5 activated...!!!\n");
       else
         LOG(INFO, "PIN NUMBER #5 not activated...!!!\n");
       unmap_peri_mem(gpio_init);
     }
-  // log out
+  std::cout << "The Mode of INPUT is: " << INPUT << std::endl;
+  std::cout << "The State of LOW  is: " << LOW << std::endl;
   return 0;
 }
