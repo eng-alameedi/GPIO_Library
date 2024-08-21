@@ -7,6 +7,7 @@
 */
 #include "rpi_gpio_mem.h"
 #include "rpi_gpio_gpfsel.h"
+#include "rpi_gpio_gpset.h"
 #include "iLog.h"
 
 #include <iostream>
@@ -26,6 +27,10 @@ int main() {
     {
       std::cout << "The GPFSEL is Started " << std::endl;
       gpsel_gpio_pin(gpio_init, 5, OUTPUT);
+      if(pin_set_state(gpio_init, 5, HIGH))
+        LOG(INFO, "PIN NUMBER #5 activated...!!!\n");
+      else
+        LOG(INFO, "PIN NUMBER #5 not activated...!!!\n");
       unmap_peri_mem(gpio_init);
     }
   return 0;
