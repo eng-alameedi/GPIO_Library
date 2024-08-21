@@ -33,5 +33,6 @@ int main() {
         LOG(INFO, "PIN NUMBER #5 not activated...!!!\n");
       unmap_peri_mem(gpio_init);
     }
+  // log out
   return 0;
 }
