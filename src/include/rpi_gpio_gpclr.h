@@ -10,7 +10,6 @@
 #ifndef _RPI_GPIO_GPCLR_H_
 #define _RPI_GPIO_GPCLR_H_
 
-#include "rpi_gpio_gpset.h"
 #define GPCLR0_OFFSET     (0x28)                     // this is the offset for the clear function 0 address
 #define GPCLR1_OFFSET     (0x2C)                     // this is the offset for the clear function 1 address
 
@@ -25,7 +24,7 @@
  * @return: this function return (unsigned int) offset of the clear number (1,0)
  *
  */
-unsigned int pin_select_offset(int);
+unsigned int pin_clear_offset(int);
 
 /**
  *
