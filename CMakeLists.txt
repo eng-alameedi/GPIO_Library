@@ -6,11 +6,9 @@ project(GPIO_LIBRARY
        )
 
 set(file_name GpioLib)
-# set(file_path src/lib/gpio.cpp src/lib/gpio_lib.cpp src/lib/init_gpio.cpp src/main.cpp)
 file(GLOB SOURCE src/main.cpp src/lib/*.cpp)
 
 include_directories(src/include)
-# include_directories(iLog/build)
 include_directories(${ilog_SOURCE_DIR}/src/include)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -29,8 +27,11 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Debug)
 endif()
 
-# add_executable(${file_name} ${file_path})
 add_executable(${file_name} ${SOURCE})
 
 target_link_libraries(${file_name} PRIVATE iLog)
 target_include_directories(${file_name} PRIVATE ${ilog_SOURCE_DIR}/src/include)
+
+if(CMAKE_BUILD_TYPE MATCHES Release)
+  target_compile_options(${file_name} INTERFACE -03 -DNDEBUG)
+endif()
