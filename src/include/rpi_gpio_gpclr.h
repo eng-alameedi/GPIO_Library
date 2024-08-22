@@ -13,7 +13,7 @@
 #define GPCLR0_OFFSET     (0x28)                     // this is the offset for the clear function 0 address
 #define GPCLR1_OFFSET     (0x2C)                     // this is the offset for the clear function 1 address
 
-#define CLEAR             (1)                        // define the clear state of the gpio pin (1 clear, 0 no effect)
+#define CLEAR_PIN          (1)                       // define the clear state of the gpio pin (1 clear, 0 no effect)
 
 /**
  *
